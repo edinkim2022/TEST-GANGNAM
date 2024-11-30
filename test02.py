@@ -2,6 +2,19 @@
 USER_FILE = "user_data.txt"
 TASK_FILE = "tasks.txt"
 
+# 사용자 등록 함수
+def register_user():
+    user_id = input("ID를 입력하세요: ")
+    password = input("비밀번호를 입력하세요: ")
+    name = input("이름을 입력하세요: ")
+    age = input("나이를 입력하세요: ")
+    gender = input("성별을 입력하세요 (남/여): ")
+    birthday = input("생일을 입력하세요 (YYYY-MM-DD): ")
+
+    with open(USER_FILE, "a", encoding="utf-8") as file:
+        file.write(f"{user_id},{password},{name},{age},{gender},{birthday}\n")
+    print("회원가입이 완료되었습니다!")
+
 def login_user():
     # 로그인 정보 입력
     user_id = input("ID를 입력하세요: ")
